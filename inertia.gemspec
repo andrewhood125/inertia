@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Where is your codes center of mass?'
   spec.description   = 'Sleuth through code with information about complexity distribution'
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/andrewhood125/inertia"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
