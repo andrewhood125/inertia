@@ -5,5 +5,16 @@ require 'inertia/grouped_mass'
 require 'inertia/resistance'
 
 module Inertia
-  # Your code goes here...
+  class << self
+    attr_accessor :config
+  end
+
+  def self.configure
+    self.config ||= Configuration.new
+    yield(config)
+  end
+
+  class Configuration
+    attr_accessor :ignore_scss
+  end
 end
