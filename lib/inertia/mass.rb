@@ -11,8 +11,12 @@ module Inertia
       @text ||= `file -b --mime #{path}`.match?('text')
     end
 
+    def scss?
+      @scss ||= File.extname(path) == 'scss'
+    end
+
     def lines
-      return 0 unless text?
+      return 0 if ignored?
 
       @lines ||= `wc -l "#{path}" | awk '{print $1}'`.chomp.to_i
     end
@@ -27,6 +31,11 @@ module Inertia
 
     def to_s
       sprintf("%6.2f%%\t%s", percent_overall_lines, path)
+    end
+
+    def ignored?
+      !text? ||
+        scss? && Inertia.config.ignore_scss
     end
   end
 end
