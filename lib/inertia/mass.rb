@@ -12,7 +12,7 @@ module Inertia
     end
 
     def scss?
-      @scss ||= File.extname(path) == 'scss'
+      @scss ||= File.extname(path) == '.scss'
     end
 
     def lines
