@@ -15,6 +15,6 @@ module Inertia
   end
 
   class Configuration
-    attr_accessor :ignore_scss
+    attr_accessor :ignore_scss, :ignore_js
   end
 end

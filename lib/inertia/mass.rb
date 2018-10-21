@@ -15,6 +15,10 @@ module Inertia
       @scss ||= File.extname(path) == '.scss'
     end
 
+    def js?
+      @js ||= File.extname(path) == '.js'
+    end
+
     def lines
       return 0 if ignored?
 
@@ -35,7 +39,8 @@ module Inertia
 
     def ignored?
       !text? ||
-        scss? && Inertia.config.ignore_scss
+        scss? && Inertia.config.ignore_scss ||
+        js? && Inertia.config.ignore_js
     end
   end
 end

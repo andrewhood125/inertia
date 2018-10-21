@@ -4,6 +4,7 @@ require 'inertia'
 
 Inertia.configure do |config|
   config.ignore_scss = ARGV.include?('--ignore-scss')
+  config.ignore_js = ARGV.include?('--ignore-js')
 end
 
 Inertia::Resistance.display
