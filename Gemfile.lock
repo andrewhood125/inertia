@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    inertia (0.1.6)
+    inertia (0.1.7)
 
 GEM
   remote: https://rubygems.org/
