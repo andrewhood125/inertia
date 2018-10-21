@@ -7,7 +7,13 @@ module Inertia
     end
     attr_reader :path
 
+    def text?
+      @text ||= `file -b --mime #{path}`.match?('text')
+    end
+
     def lines
+      return 0 unless text?
+
       @lines ||= `wc -l "#{path}" | awk '{print $1}'`.chomp.to_i
     end
 
