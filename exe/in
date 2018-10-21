@@ -5,6 +5,9 @@ require 'inertia'
 Inertia.configure do |config|
   config.ignore_scss = ARGV.include?('--ignore-scss')
   config.ignore_js = ARGV.include?('--ignore-js')
+  config.ignore_haml = ARGV.include?('--ignore-haml')
+  config.ignore_rabl = ARGV.include?('--ignore-rabl')
+  config.ignore_erb = ARGV.include?('--ignore-erb')
 end
 
 Inertia::Resistance.display

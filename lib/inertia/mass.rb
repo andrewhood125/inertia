@@ -12,11 +12,27 @@ module Inertia
     end
 
     def scss?
-      @scss ||= File.extname(path) == '.scss'
+      @scss ||= extension == '.scss'
     end
 
     def js?
-      @js ||= File.extname(path) == '.js'
+      @js ||= extension == '.js'
+    end
+
+    def haml?
+      @haml ||= extension == '.haml'
+    end
+
+    def rabl?
+      @rabl ||= extension == '.rabl'
+    end
+
+    def erb?
+      @erb ||= extension == '.erb'
+    end
+
+    def extension
+      @extension ||= File.extname(path)
     end
 
     def lines
@@ -41,6 +57,9 @@ module Inertia
       !text? ||
         scss? && Inertia.config.ignore_scss ||
         js? && Inertia.config.ignore_js
+        haml? && Inertia.config.ignore_haml
+        rabl? && Inertia.config.ignore_rabl
+        erb? && Inertia.config.ignore_erb
     end
   end
 end
