@@ -8,7 +8,7 @@ module Inertia
     attr_reader :path
 
     def text?
-      @text ||= `file -b --mime #{path}`.match?('text')
+      @text ||= File.open(path) { |file| file.read.ascii_only? }
     end
 
     def scss?
@@ -38,7 +38,7 @@ module Inertia
     def lines
       return 0 if ignored?
 
-      @lines ||= `wc -l "#{path}" | awk '{print $1}'`.chomp.to_i
+      @lines ||= File.open(path) { |file| file.each_line.count }
     end
 
     def percent_overall_lines
