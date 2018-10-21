@@ -56,9 +56,9 @@ module Inertia
     def ignored?
       !text? ||
         scss? && Inertia.config.ignore_scss ||
-        js? && Inertia.config.ignore_js
-        haml? && Inertia.config.ignore_haml
-        rabl? && Inertia.config.ignore_rabl
+        js? && Inertia.config.ignore_js ||
+        haml? && Inertia.config.ignore_haml ||
+        rabl? && Inertia.config.ignore_rabl ||
         erb? && Inertia.config.ignore_erb
     end
   end
