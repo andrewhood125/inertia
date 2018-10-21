@@ -3,6 +3,7 @@ module Inertia
   # resistance.
   class Resistance
     def self.display
+      puts "#{total_lines} lines\n\n"
       puts grouped_masses.sort.reverse
     end
 
