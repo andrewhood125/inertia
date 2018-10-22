@@ -1,4 +1,12 @@
 
+0.1.10 / 2018-10-21
+==================
+
+  * Handle unicode filenames
+  * Add more js related ignores
+  * Ignore yml
+  * Add ignore ruby spec
+
 0.1.9 / 2018-10-21
 ==================
 
