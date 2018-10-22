@@ -19,6 +19,18 @@ module Inertia
       @js ||= extension == '.js'
     end
 
+    def jsx?
+      @jsx ||= extension == '.jsx'
+    end
+
+    def ts?
+      @ts ||= extension == '.ts'
+    end
+
+    def tsx?
+      @tsx ||= extension == '.tsx'
+    end
+
     def haml?
       @haml ||= extension == '.haml'
     end
@@ -65,6 +77,9 @@ module Inertia
       !text? ||
         scss? && Inertia.config.ignore_scss ||
         js? && Inertia.config.ignore_js ||
+        jsx? && Inertia.config.ignore_jsx ||
+        ts? && Inertia.config.ignore_ts ||
+        tsx? && Inertia.config.ignore_tsx ||
         haml? && Inertia.config.ignore_haml ||
         rabl? && Inertia.config.ignore_rabl ||
         erb? && Inertia.config.ignore_erb ||

@@ -19,6 +19,9 @@ module Inertia
   class Configuration
     attr_accessor :ignore_scss,
                   :ignore_js,
+                  :ignore_jsx,
+                  :ignore_ts,
+                  :ignore_tsx,
                   :ignore_haml,
                   :ignore_rabl,
                   :ignore_erb,
