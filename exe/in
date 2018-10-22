@@ -9,6 +9,7 @@ Inertia.configure do |config|
   config.ignore_rabl = ARGV.include?('--ignore-rabl')
   config.ignore_erb = ARGV.include?('--ignore-erb')
   config.ignore_ruby_spec = ARGV.include?('--ignore-ruby-spec')
+  config.ignore_yml = ARGV.include?('--ignore-yml')
 end
 
 Inertia::Resistance.display

@@ -22,6 +22,7 @@ module Inertia
                   :ignore_haml,
                   :ignore_rabl,
                   :ignore_erb,
-                  :ignore_ruby_spec
+                  :ignore_ruby_spec,
+                  :ignore_yml
   end
 end

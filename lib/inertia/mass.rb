@@ -33,7 +33,10 @@ module Inertia
 
     def ruby_spec?
       @ruby_spec ||= path.include?('_spec.rb')
+    end
 
+    def yml?
+      @yml ||= extension == '.yml'
     end
 
     def extension
@@ -65,7 +68,8 @@ module Inertia
         haml? && Inertia.config.ignore_haml ||
         rabl? && Inertia.config.ignore_rabl ||
         erb? && Inertia.config.ignore_erb ||
-        ruby_spec? && Inertia.config.ignore_ruby_spec
+        ruby_spec? && Inertia.config.ignore_ruby_spec ||
+        yml? && Inertia.config.ignore_yml
     end
   end
 end
