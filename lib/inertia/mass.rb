@@ -31,6 +31,11 @@ module Inertia
       @erb ||= extension == '.erb'
     end
 
+    def ruby_spec?
+      @ruby_spec ||= path.include?('_spec.rb')
+
+    end
+
     def extension
       @extension ||= File.extname(path)
     end
@@ -59,7 +64,8 @@ module Inertia
         js? && Inertia.config.ignore_js ||
         haml? && Inertia.config.ignore_haml ||
         rabl? && Inertia.config.ignore_rabl ||
-        erb? && Inertia.config.ignore_erb
+        erb? && Inertia.config.ignore_erb ||
+        ruby_spec? && Inertia.config.ignore_ruby_spec
     end
   end
 end

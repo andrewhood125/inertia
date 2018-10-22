@@ -15,6 +15,6 @@ module Inertia
   end
 
   class Configuration
-    attr_accessor :ignore_scss, :ignore_js, :ignore_haml, :ignore_rabl, :ignore_erb
+    attr_accessor :ignore_scss, :ignore_js, :ignore_haml, :ignore_rabl, :ignore_erb, :ignore_ruby_spec
   end
 end
