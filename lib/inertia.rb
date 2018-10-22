@@ -4,6 +4,7 @@ require 'inertia/mass'
 require 'inertia/grouped_mass'
 require 'inertia/resistance'
 
+# Be nimble, be organized.
 module Inertia
   class << self
     attr_accessor :config
@@ -14,7 +15,13 @@ module Inertia
     yield(config)
   end
 
+  # Hold the configuration for the command
   class Configuration
-    attr_accessor :ignore_scss, :ignore_js, :ignore_haml, :ignore_rabl, :ignore_erb, :ignore_ruby_spec
+    attr_accessor :ignore_scss,
+                  :ignore_js,
+                  :ignore_haml,
+                  :ignore_rabl,
+                  :ignore_erb,
+                  :ignore_ruby_spec
   end
 end
