@@ -8,7 +8,7 @@ module Inertia
     end
 
     def self.tracked_files
-      @tracked_files ||= `git ls-files`.split
+      @tracked_files ||= `git ls-files -z`.split("\u0000")
     end
 
     # Git will list all files, this groups the top level direc
