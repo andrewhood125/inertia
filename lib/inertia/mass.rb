@@ -8,7 +8,12 @@ module Inertia
     attr_reader :path
 
     def text?
+      return if symlink?
       @text ||= File.open(path) { |file| file.read.ascii_only? }
+    end
+
+    def symlink?
+      @symlink ||= File.symlink?(path)
     end
 
     def scss?
